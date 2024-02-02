@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Covid Choropleth Map</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.0/mapbox-gl.js"></script>
     <style>
          body {
             margin: 0;
@@ -35,7 +35,7 @@
 
 #features {
     top: 0;
-    height: 100px;
+    height: 150px;
     margin-top: 20px;
     width: 250px;
 }
@@ -44,7 +44,7 @@
     padding: 10px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     line-height: 18px;
-    height: 210px;
+    height: 250px;
     margin-bottom: 40px;
     width: 150px;
 }
@@ -77,6 +77,12 @@ let map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/dark-v10', // style URL
     center: [-95, 37], // starting position [lng, lat]
     zoom: 4 // starting zoom
+});
+
+map.setProjection({
+    name: 'albers',
+    center: [-95, 37],
+    parallels: [30, 50]
 });
 
 
@@ -193,6 +199,7 @@ map.on('mousemove', ({ point }) => {
 });
 const source =
             '<p style="text-align: right; font-size:10pt">Source: <a href="https://github.com/nytimes/covid-19-data/blob/43d32dde2f87bd4dafbb7d23f5d9e878124018b8/live/us-counties.csv">New York Times Covid Data</a></p>';
+            legend.innerHTML = legend.innerHTML + source;
     </script>
 
 </body>
