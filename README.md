@@ -7,10 +7,10 @@ In order to create these maps, I used Mapbox API. The COVID-19 case/death data I
 
 ## Maps
 [Map 1 - Choropleth](http://127.0.0.1:5500/CovidMaps/map1.html)
-![Map1](/CovidMaps/img/Map1_ZAHN.png)
+![Map1](/img/Map1_ZAHN.png)
 
 [Map 2 - Proportional Symbol](http://127.0.0.1:5500/CovidMaps/map2.html)
-![Map2](/CovidMaps/img/Map2_ZAHN.png)
+![Map2](/img/Map2_ZAHN.png)
 
 
 I used the map.on function in Javascript to load the map and provide functionality on click. 
